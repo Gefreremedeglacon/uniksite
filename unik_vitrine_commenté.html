@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniK — Création Textile & PLV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Anton', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .logo {
+      width: 120px;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }
+    header {
+      background: #000;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 4rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.5rem;
+      color: #FFD700;
+      margin-top: 1rem;
+    }
+    header a {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #FFD700;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #FFD700;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .skills div {
+      flex: 1 1 300px;
+      background: #111;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+    }
+    a {
+      color: #FFD700;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      header a {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+      }
+      section h2 {
+        font-size: 2rem;
+      }
+      .skills {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔧 MODIFIER ICI : Ajouter le fichier 'unik-logo.png' dans le même dossier que ce fichier HTML -->
+  <img src="unik-logo.png" alt="Logo UniK" class="logo">
+
+  <header>
+    <!-- 🔧 MODIFIER ICI : Nom de l'entreprise -->
+    <h1>UniK</h1>
+    <!-- 🔧 MODIFIER ICI : Slogan ou description -->
+    <p>Textile, PLV & Objets marquants — design et impact</p>
+    <!-- 🔧 MODIFIER ICI : Ancre vers contact -->
+    <a href="#contact">Demander un devis</a>
+  </header>
+
+  <section id="about">
+    <!-- 🔧 MODIFIER ICI : Section présentation -->
+    <h2>Qui sommes-nous</h2>
+    <p>UniK, c’est l’expertise artisanale alliée à une vision graphique affirmée. Basé à Montélimar, on crée, on imprime, on marque les esprits.</p>
+  </section>
+
+  <section id="skills">
+    <!-- 🔧 MODIFIER ICI : Section savoir-faire -->
+    <h2>Nos savoir-faire</h2>
+    <div class="skills">
+      <div>
+        <h3>Textile personnalisé</h3>
+        <p>Tee-shirts, sweats, vestes, EPI — sérigraphie, DTF, flex et broderie.</p>
+      </div>
+      <div>
+        <h3>PLV & Impression</h3>
+        <p>Roll-up, affiches, flyers, étiquettes, stickers, covering… tout pour marquer.</p>
+      </div>
+      <div>
+        <h3>Objets pub & goodies</h3>
+        <p>Des objets utiles ou décalés, mais toujours percutants. Création et sourcing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <!-- 🔧 MODIFIER ICI : Coordonnées -->
+    <h2>Contact & devis</h2>
+    <p>Parlons de votre projet. Écrivez-moi à <a href="mailto:contact@unique-fr.com">contact@unique-fr.com</a> ou appelez le 06 XX XX XX XX.</p>
+  </section>
+
+  <footer>
+    <!-- 🔧 MODIFIER ICI : Pied de page -->
+    &copy; 2025 UniK – Créé avec amour et une touche de jaune à Montélimar.
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.8;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < trigger) {
+          section.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
